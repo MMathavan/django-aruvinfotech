@@ -31,9 +31,9 @@ def contact(request):
             form.save()
             return redirect('success')
     else:
-        form = ContactForm()    
-        
-    return render(request, 'contact.html',{'forms':form})
+        form = ContactForm()
+
+    return render(request, 'contact.html', {'forms': form})
 
 def success(request):
     return render(request,'contact_success.html')

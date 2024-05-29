@@ -1,14 +1,12 @@
-<!-- contact_success.html -->
+{% extends 'base.html' %}
+
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contact Us</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'contact_app/css/styles1.css' %}">
-</head>
+{% block title %}Aruvi Infotech || About{% endblock title %}
+
+{% block content %}
+
 <style>
-    /* styles1.css */
 
 body {
     display: flex;
@@ -68,9 +66,9 @@ a button:hover {
 }
 
 </style>
-<body>
+
     <h1>Thank you for your message!</h1>
     <p>We will get back to you soon.</p>
     <a href="{% url 'index' %}"><button>BACK TO HOME</button></a>
-</body>
-</html>
+
+{% endblock content %}
