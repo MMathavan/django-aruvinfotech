@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block link %}{% static 'css/bootstrap.min.css' %}{% endblock link %}
+
+{% block link2 %}{% static 'css/style.css' %}{% endblock link2 %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock footer %}
+
+
+
+{% block content %}
+
+<style>
+    input{
+        height: 40px;
+        width: 90%;
+        /* border: none; */
+        outline: none;
+    }
+    input:focus,textarea:focus{
+        outline: 3px solid rgba(59, 59, 178, 0.4);
+        padding-left: 2px;
+    }
+
+</style>
+<div class="bodycontainer">
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <img class="img-fluid" src="https://ik.imagekit.io/noj0uoexc/img/aruvi.png?updatedAt=1716371130889" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+                        <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                        <a href="{% url 'services' %}" class="nav-item nav-link">Services</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="{% url 'projects' %}" class="dropdown-item">Projects</a>
+                                <a href="{% url 'team' %}" class="dropdown-item">Our Team</a>
+                            </div>
+                        </div>
+                        <a href="{% url 'contact' %}" class="nav-item nav-link">Contact Us</a>
+                    </div>
+                </div>
+            </nav>
+        
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Contact Us</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+        <!-- Contact Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Contact Us</h5>
+                    <h1 class="mb-5">Contact For Any Query</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                        <iframe class="position-relative rounded w-100 h-100"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3371.2367829455843!2d77.29349757806018!3d8.989948738780118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06830e41e9c4c5%3A0x36fe20bb74d05ead!2sAruvi%20Institute%20of%20Learning!5e1!3m2!1sen!2sin!4v1646204215867!5m2!1sen!2sin"
+                            frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
+                            tabindex="0"></iframe>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wow fadeInUp" data-wow-delay="0.2s">
+                            <form action="#" method="post">
+                                {% csrf_token %}
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            {% comment %} <input type="text" class="form-control" id="name" name="name"
+                                                placeholder="Your Name"> {% endcomment %}
+                                            {% comment %} <label for="id_name" class='form-label'>Your Name</label> {% endcomment %}
+                                            {{forms.name}}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            {% comment %} <input type="email" class="form-control" id="email" name="email"
+                                                placeholder="Email Address"> {% endcomment %}
+                                            {% comment %} <label for="email">Your Email</label> {% endcomment %}
+                                            {{forms.email}}
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            {% comment %} <input type="text" class="form-control" id="subject" name="subject"
+                                                placeholder="Subject"> {% endcomment %}
+                                            {% comment %} <label for="subject">Subject</label> {% endcomment %}
+                                            {{forms.mobileno}}
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            {% comment %} <textarea class="form-control" placeholder="Leave a message here"
+                                                id="message" name="message" style="height: 150px"></textarea> {% endcomment %}
+                                            {% comment %} <label for="message">Message</label> {% endcomment %}
+                                            {{forms.message}}
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                    </div>
+                                    {% comment %} <input type="hidden" name="_template" value="table">
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <input type="hidden" name="_next"
+                                        value="https://mdrahuman06.github.io/Aruvi-InfoTech/">
+                                    <input type="text" name="_honey" style="display:none">
+                                    <input type="hidden" name="_autoresponse" value="your custom message">
+                                    <input type="hidden" name="_subject" value="New Form Submission From InfoTech!"> {% endcomment %}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+        <script src="{% static 'js/main.js' %}"></script>
+        {% endblock content %}

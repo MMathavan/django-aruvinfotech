@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Projects{% endblock title %}
+
+{% block link %}{% static 'css/bootstrap.min.css' %}{% endblock link %}
+
+{% block link2 %}{% static 'css/style.css' %}{% endblock link2 %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock footer %}
+
+{% block content %}
+<div class="bodycontainer">
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <img class="img-fluid" src="https://ik.imagekit.io/noj0uoexc/img/aruvi.png?updatedAt=1716371130889" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+                        <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                        <a href="{% url 'services' %}" class="nav-item nav-link">Services</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="{% url 'projects' %}" class="dropdown-item">Projects</a>
+                                <a href="{% url 'team' %}" class="dropdown-item">Our Team</a>
+                            </div>
+                        </div>
+                        <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Our Projects</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+        <!-- projects -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Projects</h5>
+                    <h1 class="mb-5">Our projects</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <a href="https://www.aruviinstituteoflearning.com/"><img class="img-fluid"
+                                        src="https://ik.imagekit.io/noj0uoexc/img/Aruvi%20inst.png?updatedAt=1716371129059"></a>
+                                <h3>Aruvi Institute</h3>
+                                <a href="https://www.aruviinstituteoflearning.com/">aruviinstituteoflearning.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <a href="https://medregia.com/"><img class="img-fluid"
+                                        src="https://ik.imagekit.io/noj0uoexc/img/Medregia.png?updatedAt=1716371125974"></a>
+                                <h3>Medical Invoice</h3>
+                                <a href="https://medregia.com/">Medregia.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <a href="https://rtvstatn.in/"><img class="img-fluid"
+                                        src="https://ik.imagekit.io/noj0uoexc/img/rto.png?updatedAt=1716371132402"></a>
+                                <h3>RTO</h3>
+                                <a href="https://rtvstatn.in/">rtvstatn.in</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <a href="https://suryashreejith.com/"><img class="img-fluid"
+                                        src="https://ik.imagekit.io/noj0uoexc/img/suryashreejith.png?updatedAt=1716371131508"></a>
+                                <h3>Music Website</h3>
+                                <a href="https://suryashreejith.com/">suryashreejith.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <a href="https://logisticsapplication.great-site.net/"><img class="img-fluid"
+                                        src="https://ik.imagekit.io/noj0uoexc/img/logisticsapplication.png?updatedAt=1716371129171"></a>
+                                <h3>logistics application</h3>
+                                <a href="https://logisticsapplication.great-site.net/">logisticsapplication.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- projects End -->
+        <script src="{% static 'js/main.js' %}"></script>
+        {% endblock content %}
